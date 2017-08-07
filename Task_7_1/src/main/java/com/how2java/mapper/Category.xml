@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--映射CategoryMapper接口-->
+<mapper namespace="com.how2java.mapper.CategoryMapper">
+    <select id="list" resultType="Category">
+            select * from magor
+        </select>
+
+    <select id="getAll" resultType="Category">
+            select * from super_student
+        </select>
+
+    <insert id="add" parameterType="Category">
+            insert into super_student (magor,name,jianjie,portrait) values (#{magor},#{name},#{jianjie},#{portrait})
+        </insert>
+
+    <insert id="register" parameterType="Register">
+            INSERT INTO register (username,email,password) VALUES (#{username},#{email},#{password})
+        </insert>
+
+    <select id="getMP" resultType="Register">
+            select * from   register  where email = #{email}
+        </select>
+
+    <select id="getPpNumber" resultType="Long">
+            select count(*) from register
+        </select>
+
+    <update id="setPortrait" parameterType="Register">
+            UPDATE register SET portraitpath = #{portraitpath} WHERE email = #{email}
+    </update>
+
+    <!-- resultType     结果类型-->
+    <!-- parameterType  参数类型-->
+
+</mapper>
+
